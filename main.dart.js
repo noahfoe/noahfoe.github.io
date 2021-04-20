@@ -8215,7 +8215,7 @@ _.c=b
 _.d=c
 _.e=d
 _.a=e},
-ajm:function(){var s=null,r=L.co("Hello! My name is",s,A.dz(s,s,C.dh,s,s,s,s,s,s,s,s,s,s,s,s,s,!0,s,s,s,s,s,s),2),q=L.co("Noah\nFoley",s,A.dz(s,s,C.j,s,s,s,s,s,s,s,s,s,s,C.cy,s,s,!0,s,s,s,s,s,s),5),p=T.fo(s,10,s),o=L.co("I'm Texas State Student majoring in Computer Science.\nI have a minor in Communication Studies\nand another minor in Applied Mathematics.",!0,A.dz(s,s,C.C,s,s,s,s,s,s,s,s,s,s,s,s,s,!0,s,s,s,s,s,s),1.5),n=T.fo(s,20,s),m=T.fo(s,s,20),l=A.Mc(s,s,s,s,s,new V.fC(C.q4,t.hE),s,s,new V.lR(new Y.Tc(),t.xw),new V.fC(new V.aT(10,10,10,10),t.ut),s,new V.fC(new X.d_(K.kb(20),C.t),t.tN),s,s,s,s),k=t.l
+ajm:function(){var s=null,r=L.co("Hello! My name is",s,A.dz(s,s,C.dh,s,s,s,s,s,s,s,s,s,s,s,s,s,!0,s,s,s,s,s,s),2),q=L.co("Noah\nFoley",s,A.dz(s,s,C.j,s,s,s,s,s,s,s,s,s,s,C.cy,s,s,!0,s,s,s,s,s,s),5),p=T.fo(s,10,s),o=L.co("I'm a Texas State student majoring in Computer Science.\nI have a minor in Communication Studies and\nanother minor in Applied Mathematics.",!0,A.dz(s,s,C.C,s,s,s,s,s,s,s,s,s,s,s,s,s,!0,s,s,s,s,s,s),1.5),n=T.fo(s,20,s),m=T.fo(s,s,20),l=A.Mc(s,s,s,s,s,new V.fC(C.q4,t.hE),s,s,new V.lR(new Y.Tc(),t.xw),new V.fC(new V.aT(10,10,10,10),t.ut),s,new V.fC(new X.d_(K.kb(20),C.t),t.tN),s,s,s,s),k=t.l
 return new Y.C9(T.hD(H.c([r,q,p,o,n,T.fj(H.c([new X.CY(s),m,B.jp(L.co("Contact Me",s,s,s),new Y.Td(),l)],k),C.P,C.mL,C.K)],k),C.iV,C.a_,C.K),s)},
 KI:function(a){var s=0,r=P.a7(t.z),q
 var $async$KI=P.a3(function(b,c){if(b===1)return P.a4(c,r)
@@ -54189,7 +54189,7 @@ i=b.P(i).f.a.a>800?T.fj(H.c([new Y.rA(j),new Y.rB(j),new Y.rC(j)],k),C.P,C.mK,C.
 k=B.a4R(T.hD(H.c([p,o,n,m,l,i,new Z.y3(j)],k),C.P,C.a_,C.K),j)
 return B.a4R(new M.tD(new E.pF(0,C.k,new P.R(1/0,56),j),new E.Dr(!0,new G.pu(new V.aT(q,q,q,q),k,C.bb,r,j,j),j),s,C.k,j),j)}}
 Y.rA.prototype={
-L:function(a,b){var s,r,q,p=null,o="Texas Real State - Flutter App\nA real estate app for Texas State Students\nwho are looking for apartments.",n="img/homePage.jpg",m="img/galleryPage1.jpg",l=t.l
+L:function(a,b){var s,r,q,p=null,o="Texas Real State - Flutter App\nA real estate app for Texas State Students who are looking for apartments.",n="img/homePage.JPG",m="img/galleryPage1.JPG",l=t.l
 l=b.P(t.w).f.a.a<800?T.hD(H.c([L.co(o,p,A.dz(p,p,p,p,p,p,p,p,p,p,p,15,p,p,p,p,!0,p,p,p,p,p,p),p),new R.b8(p),T.fj(H.c([new R.b8(p),U.ew(n,4.5),new R.b8(p),U.ew(m,4.5),new R.b8(p)],l),C.P,C.a_,C.K),new R.b8(p),B.jp(L.co("Github",p,p,p),new Y.RM(this),p)],l),C.P,C.a_,C.K):T.hD(H.c([L.co(o,p,A.dz(p,p,p,p,p,p,p,p,p,p,p,20,p,p,p,p,!0,p,p,p,p,p,p),p),new R.b8(p),T.fj(H.c([U.ew("img/loginPage.jpg",4.5),new R.b8(p),U.ew(m,4.5),new R.b8(p),U.ew(n,4.5),new R.b8(p),U.ew("img/hamburger_menu.jpg",4.5)],l),C.P,C.a_,C.K),new R.b8(p),B.jp(L.co("Github",p,p,p),new Y.RN(this),p)],l),C.P,C.a_,C.K)
 s=P.ae(102,255,255,255)
 r=C.Q.aF(25.5)
@@ -54219,13 +54219,13 @@ Y.RN.prototype={
 $0:function(){return this.a.bU(u.W)},
 $S:0}
 Y.rB.prototype={
-L:function(a,b){var s,r,q,p=this,o=null,n="img/covid.jpg",m=t.l
-m=b.P(t.w).f.a.a<800?T.hD(H.c([L.co("COVID-19 Tracker Website - React Website\nA website using Axios API\nthat displays current info about the Coronavirus.",o,A.dz(o,o,o,o,o,o,o,o,o,o,o,15,o,o,o,o,!0,o,o,o,o,o,o),o),new R.b8(o),T.fj(H.c([new R.b8(o),U.ew(n,5.5),new R.b8(o)],m),C.P,C.a_,C.K),new R.b8(o),T.fj(H.c([B.jp(L.co("Github",o,o,o),new Y.RO(p),o),new R.b8(o),B.jp(L.co("Live",o,o,o),new Y.RP(p),o)],m),C.P,C.a_,C.K)],m),C.P,C.a_,C.K):T.hD(H.c([L.co("COVID-19 Tracker Website - React Website\nA website using Axios API that displays\ncurrent info about the Coronavirus.",o,A.dz(o,o,o,o,o,o,o,o,o,o,o,20,o,o,o,o,!0,o,o,o,o,o,o),o),new R.b8(o),T.fj(H.c([new R.b8(o),U.ew(n,5.5),new R.b8(o)],m),C.P,C.a_,C.K),new R.b8(o),T.fj(H.c([B.jp(L.co("Github",o,o,o),new Y.RQ(p),o),new R.b8(o),B.jp(L.co("Live",o,o,o),new Y.RR(p),o)],m),C.P,C.a_,C.K)],m),C.P,C.a_,C.K)
+L:function(a,b){var s,r,q,p=this,o=null,n="COVID-19 Tracker Website - React Website\nA website using Axios API that displays current info about the Coronavirus.",m="img/covid.JPG",l=t.l
+l=b.P(t.w).f.a.a<800?T.hD(H.c([L.co(n,o,A.dz(o,o,o,o,o,o,o,o,o,o,o,15,o,o,o,o,!0,o,o,o,o,o,o),o),new R.b8(o),T.fj(H.c([new R.b8(o),U.ew(m,5.5),new R.b8(o)],l),C.P,C.a_,C.K),new R.b8(o),T.fj(H.c([B.jp(L.co("Github",o,o,o),new Y.RO(p),o),new R.b8(o),B.jp(L.co("Live",o,o,o),new Y.RP(p),o)],l),C.P,C.a_,C.K)],l),C.P,C.a_,C.K):T.hD(H.c([L.co(n,o,A.dz(o,o,o,o,o,o,o,o,o,o,o,20,o,o,o,o,!0,o,o,o,o,o,o),o),new R.b8(o),T.fj(H.c([new R.b8(o),U.ew(m,5.5),new R.b8(o)],l),C.P,C.a_,C.K),new R.b8(o),T.fj(H.c([B.jp(L.co("Github",o,o,o),new Y.RQ(p),o),new R.b8(o),B.jp(L.co("Live",o,o,o),new Y.RR(p),o)],l),C.P,C.a_,C.K)],l),C.P,C.a_,C.K)
 s=P.ae(102,255,255,255)
 r=C.Q.aF(25.5)
 q=t.r8
 s=H.c([s,P.ae(r,255,255,255)],q)
-return U.a4g(C.iK,15,C.dh,new T.e0(C.f2,C.f1,C.aE,H.c([P.ae(153,255,255,255),P.ae(r,255,255,255),P.ae(13,224,64,251),P.ae(153,224,64,251)],q),H.c([0,0.39,0.4,1],t.bq),o),K.kb(24),2,m,3,0.12,new T.e0(C.f2,C.f1,C.aE,s,o,o),300,!0,new V.aT(8,8,8,8),new V.aT(8,8,8,8),P.ae(51,0,0,0),400)},
+return U.a4g(C.iK,15,C.dh,new T.e0(C.f2,C.f1,C.aE,H.c([P.ae(153,255,255,255),P.ae(r,255,255,255),P.ae(13,224,64,251),P.ae(153,224,64,251)],q),H.c([0,0.39,0.4,1],t.bq),o),K.kb(24),2,l,3,0.12,new T.e0(C.f2,C.f1,C.aE,s,o,o),300,!0,new V.aT(8,8,8,8),new V.aT(8,8,8,8),P.ae(51,0,0,0),400)},
 bU:function(a){var s=0,r=P.a7(t.z),q
 var $async$bU=P.a3(function(b,c){if(b===1)return P.a4(c,r)
 while(true)switch(s){case 0:s=6
@@ -54255,8 +54255,8 @@ Y.RR.prototype={
 $0:function(){return this.a.bU(u.R)},
 $S:0}
 Y.rC.prototype={
-L:function(a,b){var s,r,q,p=null,o="Mac Mood App - React Native App\nAn app that asks the user what mood they are in,\nand displays a Mac Miller song to envoke that mood.",n="img/mac-mood-app2.jpg",m="img/mac-mood-app3.jpg",l=t.l
-l=b.P(t.w).f.a.a<800?T.hD(H.c([L.co(o,p,A.dz(p,p,p,p,p,p,p,p,p,p,p,15,p,p,p,p,!0,p,p,p,p,p,p),p),new R.b8(p),T.fj(H.c([new R.b8(p),U.ew(n,15),new R.b8(p),U.ew(m,15),new R.b8(p)],l),C.P,C.a_,C.K),new R.b8(p),B.jp(L.co("Github",p,p,p),new Y.RS(this),p)],l),C.P,C.a_,C.K):T.hD(H.c([L.co(o,p,A.dz(p,p,p,p,p,p,p,p,p,p,p,20,p,p,p,p,!0,p,p,p,p,p,p),p),new R.b8(p),T.fj(H.c([new R.b8(p),U.ew("img/mac-mood-app1.jpg",22),new R.b8(p),U.ew(n,22),new R.b8(p),U.ew(m,22),new R.b8(p)],l),C.P,C.a_,C.K),new R.b8(p),B.jp(L.co("Github",p,p,p),new Y.RT(this),p)],l),C.P,C.a_,C.K)
+L:function(a,b){var s,r,q,p=null,o="Mac Mood App - React Native App\nAn app that asks the user what mood they are in, and displays a Mac Miller song to envoke that mood.",n="img/mac-mood-app2.jpg",m="img/mac-mood-app3.jpg",l=t.l
+l=b.P(t.w).f.a.a<800?T.hD(H.c([L.co(o,p,A.dz(p,p,p,p,p,p,p,p,p,p,p,15,p,p,p,p,!0,p,p,p,p,p,p),p),new R.b8(p),T.fj(H.c([new R.b8(p),U.ew(n,17),new R.b8(p),U.ew(m,17),new R.b8(p)],l),C.P,C.a_,C.K),new R.b8(p),B.jp(L.co("Github",p,p,p),new Y.RS(this),p)],l),C.P,C.a_,C.K):T.hD(H.c([L.co(o,p,A.dz(p,p,p,p,p,p,p,p,p,p,p,20,p,p,p,p,!0,p,p,p,p,p,p),p),new R.b8(p),T.fj(H.c([new R.b8(p),U.ew("img/mac-mood-app1.jpg",22),new R.b8(p),U.ew(n,22),new R.b8(p),U.ew(m,22),new R.b8(p)],l),C.P,C.a_,C.K),new R.b8(p),B.jp(L.co("Github",p,p,p),new Y.RT(this),p)],l),C.P,C.a_,C.K)
 s=P.ae(102,255,255,255)
 r=C.Q.aF(25.5)
 q=t.r8
