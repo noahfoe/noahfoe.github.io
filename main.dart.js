@@ -54189,7 +54189,7 @@ i=b.P(i).f.a.a>800?T.fj(H.c([new Y.rA(j),new Y.rB(j),new Y.rC(j)],k),C.P,C.mK,C.
 k=B.a4R(T.hD(H.c([p,o,n,m,l,i,new Z.y3(j)],k),C.P,C.a_,C.K),j)
 return B.a4R(new M.tD(new E.pF(0,C.k,new P.R(1/0,56),j),new E.Dr(!0,new G.pu(new V.aT(q,q,q,q),k,C.bb,r,j,j),j),s,C.k,j),j)}}
 Y.rA.prototype={
-L:function(a,b){var s,r,q,p=null,o="Texas Real State - Flutter App\nA real estate app for Texas State Students\nwho are looking for apartments.",n="img/homePage.jpg",m="img/galleryPage1.jpg",l=t.l
+L:function(a,b){var s,r,q,p=null,o="Texas Real State - Flutter App\nA real estate app for Texas State Students\nwho are looking for apartments.",n="img/homePage.JPG",m="img/galleryPage1.JPG",l=t.l
 l=b.P(t.w).f.a.a<800?T.hD(H.c([L.co(o,p,A.dz(p,p,p,p,p,p,p,p,p,p,p,15,p,p,p,p,!0,p,p,p,p,p,p),p),new R.b8(p),T.fj(H.c([new R.b8(p),U.ew(n,4.5),new R.b8(p),U.ew(m,4.5),new R.b8(p)],l),C.P,C.a_,C.K),new R.b8(p),B.jp(L.co("Github",p,p,p),new Y.RM(this),p)],l),C.P,C.a_,C.K):T.hD(H.c([L.co(o,p,A.dz(p,p,p,p,p,p,p,p,p,p,p,20,p,p,p,p,!0,p,p,p,p,p,p),p),new R.b8(p),T.fj(H.c([U.ew("img/loginPage.jpg",4.5),new R.b8(p),U.ew(m,4.5),new R.b8(p),U.ew(n,4.5),new R.b8(p),U.ew("img/hamburger_menu.jpg",4.5)],l),C.P,C.a_,C.K),new R.b8(p),B.jp(L.co("Github",p,p,p),new Y.RN(this),p)],l),C.P,C.a_,C.K)
 s=P.ae(102,255,255,255)
 r=C.Q.aF(25.5)
@@ -54219,7 +54219,7 @@ Y.RN.prototype={
 $0:function(){return this.a.bU(u.W)},
 $S:0}
 Y.rB.prototype={
-L:function(a,b){var s,r,q,p=this,o=null,n="img/covid.jpg",m=t.l
+L:function(a,b){var s,r,q,p=this,o=null,n="img/covid.JPG",m=t.l
 m=b.P(t.w).f.a.a<800?T.hD(H.c([L.co("COVID-19 Tracer Website - React Webstie\nA website using Axios API\nthat displays current info about the Coronavirus.",o,A.dz(o,o,o,o,o,o,o,o,o,o,o,15,o,o,o,o,!0,o,o,o,o,o,o),o),new R.b8(o),T.fj(H.c([new R.b8(o),U.ew(n,5.5),new R.b8(o)],m),C.P,C.a_,C.K),new R.b8(o),T.fj(H.c([B.jp(L.co("Github",o,o,o),new Y.RO(p),o),new R.b8(o),B.jp(L.co("Live",o,o,o),new Y.RP(p),o)],m),C.P,C.a_,C.K)],m),C.P,C.a_,C.K):T.hD(H.c([L.co("COVID-19 Tracer Website - React Webstie\nA website using Axios API that displays \ncurrent info about the Coronavirus.",o,A.dz(o,o,o,o,o,o,o,o,o,o,o,20,o,o,o,o,!0,o,o,o,o,o,o),o),new R.b8(o),T.fj(H.c([new R.b8(o),U.ew(n,5.5),new R.b8(o)],m),C.P,C.a_,C.K),new R.b8(o),T.fj(H.c([B.jp(L.co("Github",o,o,o),new Y.RQ(p),o),new R.b8(o),B.jp(L.co("Live",o,o,o),new Y.RR(p),o)],m),C.P,C.a_,C.K)],m),C.P,C.a_,C.K)
 s=P.ae(102,255,255,255)
 r=C.Q.aF(25.5)
