@@ -1,147 +1,171 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Code2 } from "lucide-react";
-import ResumeDropdown from "./ResumeDropdown";
+import { useState, useEffect } from 'react';
+import { NavLink, Link, useLocation } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
+import { AnimatePresence, motion } from 'framer-motion';
+import ResumeButton from './ResumeButton';
 
-const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Projects", href: "#projects" },
-  { label: "Skills", href: "#skills" },
-  { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
+const LINKS = [
+  { to: '/', label: 'Home', end: true },
+  { to: '/projects', label: 'Projects' },
+  { to: '/experience', label: 'Experience' },
+  { to: '/about', label: 'About' },
+  { to: '/contact', label: 'Contact' },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [active, setActive] = useState("");
+  const [open, setOpen] = useState(false);
+  const { pathname } = useLocation();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    const handle = () => setScrolled(window.scrollY > 24);
+    window.addEventListener('scroll', handle, { passive: true });
+    handle();
+    return () => window.removeEventListener('scroll', handle);
   }, []);
 
+  // Close mobile menu on route change
+  useEffect(() => { setOpen(false); }, [pathname]);
+
+  // Prevent body scroll when menu is open
   useEffect(() => {
-    const sections = navLinks.map((l) => l.href.slice(1));
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) setActive(e.target.id);
-        });
-      },
-      { threshold: 0.35 }
-    );
-    sections.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-    return () => observer.disconnect();
-  }, []);
-
-  const handleNav = (href: string) => {
-    setMenuOpen(false);
-    const el = document.getElementById(href.slice(1));
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
+    document.body.style.overflow = open ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [open]);
 
   return (
     <>
-      <motion.header
-        initial={{ y: -80, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? "bg-[#050d1a]/90 backdrop-blur-xl border-b border-[rgba(99,179,237,0.10)]"
-            : "bg-transparent"
-        }`}
+      <header
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          height: 62,
+          zIndex: 100,
+          display: 'flex',
+          alignItems: 'center',
+          transition: 'background 0.25s, border-color 0.25s, backdrop-filter 0.25s',
+          background: scrolled ? 'rgba(12,13,16,0.88)' : 'transparent',
+          borderBottom: scrolled ? '1px solid rgba(255,255,255,0.07)' : '1px solid transparent',
+          backdropFilter: scrolled ? 'blur(14px)' : 'none',
+          WebkitBackdropFilter: scrolled ? 'blur(14px)' : 'none',
+        }}
       >
-        <div className="section-container h-16 flex items-center justify-between">
-          {/* Logo */}
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="flex items-center gap-2 group"
-            aria-label="Scroll to top"
+        <div className="wrap" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '100%' }}>
+          {/* Brand */}
+          <Link
+            to="/"
+            style={{
+              fontFamily: "'Bricolage Grotesque', sans-serif",
+              fontWeight: 700,
+              fontSize: 15,
+              letterSpacing: '-0.01em',
+              color: 'var(--t1)',
+              textDecoration: 'none',
+              flexShrink: 0,
+            }}
           >
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#38bdf8] to-[#818cf8] flex items-center justify-center shadow-lg group-hover:shadow-cyan-500/30 transition-shadow duration-300">
-              <Code2 size={16} className="text-white" />
-            </div>
-            <span className="font-bold text-white tracking-tight text-sm hidden sm:block">
-              Noah Foley
-            </span>
-          </button>
+            Noah Foley
+          </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
-            {navLinks.map((link) => (
-              <button
-                key={link.href}
-                onClick={() => handleNav(link.href)}
-                className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${
-                  active === link.href.slice(1)
-                    ? "text-[#38bdf8]"
-                    : "text-[#94a3b8] hover:text-white"
-                }`}
+          <nav
+            className="hidden md:flex"
+            style={{ alignItems: 'center', gap: 2 }}
+          >
+            {LINKS.map(link => (
+              <NavLink
+                key={link.to}
+                to={link.to}
+                end={link.end}
+                style={({ isActive }) => ({
+                  padding: '6px 13px',
+                  borderRadius: 7,
+                  fontSize: 14,
+                  fontWeight: 500,
+                  textDecoration: 'none',
+                  color: isActive ? 'var(--accent)' : 'var(--t2)',
+                  background: isActive ? 'var(--accent-dim)' : 'transparent',
+                  transition: 'color 0.14s, background 0.14s',
+                })}
               >
-                {active === link.href.slice(1) && (
-                  <motion.span
-                    layoutId="nav-pill"
-                    className="absolute inset-0 rounded-lg bg-[rgba(56,189,248,0.08)]"
-                    transition={{ type: "spring", bounce: 0.2, duration: 0.4 }}
-                  />
-                )}
-                <span className="relative z-10">{link.label}</span>
-              </button>
+                {link.label}
+              </NavLink>
             ))}
           </nav>
 
-          {/* Desktop CTA */}
+          {/* Desktop resume */}
           <div className="hidden md:block">
-            <ResumeDropdown variant="ghost-nav" label="Resume" dropdownAlign="right" />
+            <ResumeButton variant="ghost" />
           </div>
 
-          {/* Mobile burger */}
+          {/* Mobile hamburger */}
           <button
-            onClick={() => setMenuOpen((o) => !o)}
-            className="md:hidden text-[#94a3b8] hover:text-white p-2 rounded-lg"
-            aria-label={menuOpen ? "Close menu" : "Open menu"}
-            aria-expanded={menuOpen}
+            className="md:hidden"
+            onClick={() => setOpen(v => !v)}
+            aria-label={open ? 'Close navigation' : 'Open navigation'}
+            style={{
+              background: 'none',
+              border: 'none',
+              color: 'var(--t1)',
+              cursor: 'pointer',
+              padding: 8,
+              borderRadius: 8,
+              lineHeight: 0,
+            }}
           >
-            {menuOpen ? <X size={22} /> : <Menu size={22} />}
+            {open ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
-      </motion.header>
+      </header>
 
-      {/* Mobile drawer */}
+      {/* Mobile overlay */}
       <AnimatePresence>
-        {menuOpen && (
+        {open && (
           <motion.div
-            key="mobile-menu"
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.2 }}
-            className="fixed top-16 left-0 right-0 z-40 bg-[#071224]/95 backdrop-blur-xl border-b border-[rgba(99,179,237,0.12)] md:hidden"
+            transition={{ duration: 0.18, ease: 'easeOut' as const }}
+            style={{
+              position: 'fixed',
+              inset: 0,
+              zIndex: 90,
+              background: 'rgba(12,13,16,0.97)',
+              display: 'flex',
+              flexDirection: 'column',
+              paddingTop: 78,
+              padding: '78px 24px 40px',
+            }}
           >
-            <nav className="flex flex-col px-6 py-4 gap-1" aria-label="Mobile navigation">
-              {navLinks.map((link) => (
-                <button
-                  key={link.href}
-                  onClick={() => handleNav(link.href)}
-                  className={`text-left px-4 py-3 rounded-lg text-sm font-medium transition-colors duration-200 ${
-                    active === link.href.slice(1)
-                      ? "text-[#38bdf8] bg-[rgba(56,189,248,0.08)]"
-                      : "text-[#94a3b8] hover:text-white hover:bg-white/5"
-                  }`}
+            <nav style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+              {LINKS.map(link => (
+                <NavLink
+                  key={link.to}
+                  to={link.to}
+                  end={link.end}
+                  style={({ isActive }) => ({
+                    display: 'block',
+                    padding: '14px 16px',
+                    borderRadius: 10,
+                    fontSize: 20,
+                    fontWeight: 700,
+                    fontFamily: "'Bricolage Grotesque', sans-serif",
+                    textDecoration: 'none',
+                    letterSpacing: '-0.01em',
+                    color: isActive ? 'var(--accent)' : 'var(--t1)',
+                    background: isActive ? 'var(--accent-dim)' : 'transparent',
+                    transition: 'color 0.14s, background 0.14s',
+                  })}
                 >
                   {link.label}
-                </button>
+                </NavLink>
               ))}
-              <div className="mt-2">
-                <ResumeDropdown variant="secondary" label="Download Resume" className="w-full" />
-              </div>
             </nav>
+            <div style={{ marginTop: 20 }}>
+              <ResumeButton variant="outlined" fullWidth label="Download Resume" />
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

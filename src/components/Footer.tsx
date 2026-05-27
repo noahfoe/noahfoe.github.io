@@ -1,50 +1,87 @@
-import { Mail, Code2 } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "./BrandIcons";
-import { personal } from "../data/portfolio";
-
-const year = new Date().getFullYear();
+import { Link } from 'react-router-dom';
+import { Mail } from 'lucide-react';
+import { GithubIcon, LinkedinIcon } from './BrandIcons';
+import { site } from '../data/portfolio';
 
 export default function Footer() {
+  const year = new Date().getFullYear();
+
   return (
-    <footer className="border-t border-[rgba(99,179,237,0.08)] py-10">
-      <div className="section-container">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
-          {/* Brand */}
-          <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[#38bdf8] to-[#818cf8] flex items-center justify-center">
-              <Code2 size={14} className="text-white" />
-            </div>
-            <span className="text-sm font-bold text-[#94a3b8]">Noah Foley</span>
-          </div>
+    <footer
+      style={{
+        borderTop: '1px solid var(--bdr)',
+        padding: '32px 0',
+        marginTop: 'auto',
+      }}
+    >
+      <div
+        className="wrap"
+        style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: 16,
+        }}
+      >
+        {/* Brand + nav */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 20, flexWrap: 'wrap' }}>
+          <Link
+            to="/"
+            style={{
+              fontFamily: "'Bricolage Grotesque', sans-serif",
+              fontWeight: 700,
+              fontSize: 14,
+              letterSpacing: '-0.01em',
+              color: 'var(--t1)',
+              textDecoration: 'none',
+            }}
+          >
+            Noah Foley
+          </Link>
+          <span style={{ color: 'var(--bdr-md)', fontSize: 12 }}>·</span>
+          <span
+            className="mono"
+            style={{ fontSize: 11, color: 'var(--t3)', letterSpacing: '0.04em' }}
+          >
+            Flutter · Frontend · Full-Stack
+          </span>
+        </div>
 
-          {/* Copyright */}
-          <p className="text-xs text-[#64748b] text-center">
-            © {year} Noah Foley. Built with React, Vite &amp; Tailwind CSS.
-          </p>
-
-          {/* Social icons */}
-          <div className="flex items-center gap-2">
-            {[
-              { href: personal.github, icon: <GithubIcon width={16} height={16} />, label: "GitHub profile" },
-              { href: personal.linkedin, icon: <LinkedinIcon width={16} height={16} />, label: "LinkedIn profile" },
-              {
-                href: `mailto:${personal.email}`,
-                icon: <Mail size={16} />,
-                label: "Email Noah Foley",
-              },
-            ].map((s) => (
-              <a
-                key={s.label}
-                href={s.href}
-                target={s.href.startsWith("mailto") ? undefined : "_blank"}
-                rel={s.href.startsWith("mailto") ? undefined : "noopener noreferrer"}
-                aria-label={s.label}
-                className="w-8 h-8 flex items-center justify-center rounded-lg text-[#64748b] hover:text-[#38bdf8] hover:bg-[rgba(56,189,248,0.08)] transition-all duration-200"
-              >
-                {s.icon}
-              </a>
-            ))}
-          </div>
+        {/* Social + copyright */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+          <a
+            href={`mailto:${site.email}`}
+            aria-label="Email"
+            style={{ color: 'var(--t3)', transition: 'color 0.14s', lineHeight: 0 }}
+            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = 'var(--t1)'; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = 'var(--t3)'; }}
+          >
+            <Mail size={16} />
+          </a>
+          <a
+            href={site.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            style={{ color: 'var(--t3)', transition: 'color 0.14s', lineHeight: 0 }}
+            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = 'var(--t1)'; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = 'var(--t3)'; }}
+          >
+            <GithubIcon size={16} />
+          </a>
+          <a
+            href={site.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            style={{ color: 'var(--t3)', transition: 'color 0.14s', lineHeight: 0 }}
+            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = 'var(--t1)'; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = 'var(--t3)'; }}
+          >
+            <LinkedinIcon size={16} />
+          </a>
+          <span style={{ fontSize: 12, color: 'var(--t4)' }}>© {year} Noah Foley</span>
         </div>
       </div>
     </footer>
